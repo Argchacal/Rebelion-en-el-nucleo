@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbmd2kb7vlobt"]
+
+[ext_resource type="PackedScene" uid="uid://brd0abvfnit7v" path="res://src/escenas/level.tscn" id="1_blyxm"]
+[ext_resource type="PackedScene" uid="uid://n5hexnujrnv8" path="res://src/escenas/player.tscn" id="2_glrbf"]
+[ext_resource type="PackedScene" uid="uid://cjkkrnis2yy" path="res://src/escenas/Bateria.tscn" id="3_glrbf"]
+
+[node name="Main" type="Node"]
+
+[node name="Bateria" parent="." instance=ExtResource("3_glrbf")]
+position = Vector2(193, 384)
+
+[node name="2DScene" type="Node2D" parent="."]
+
+[node name="Level" parent="2DScene" instance=ExtResource("1_blyxm")]
+
+[node name="Player" parent="2DScene" groups=["Player"] instance=ExtResource("2_glrbf")]
+position = Vector2(190, -48)
+scale = Vector2(0.5, 0.5)

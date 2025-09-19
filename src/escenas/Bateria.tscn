@@ -1,0 +1,77 @@
+[gd_scene load_steps=12 format=3 uid="uid://cjkkrnis2yy"]
+
+[ext_resource type="Texture2D" uid="uid://b7hrlgmhny2o" path="res://_assets/sprites/objetos/bateria.png" id="1_8v0qi"]
+[ext_resource type="Script" uid="uid://djgy6myul8ovq" path="res://src/scripts/bateria.gd" id="1_iukva"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iukva"]
+size = Vector2(7, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fxqx4"]
+atlas = ExtResource("1_8v0qi")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bgcjn"]
+atlas = ExtResource("1_8v0qi")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lpomb"]
+atlas = ExtResource("1_8v0qi")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_chlbk"]
+atlas = ExtResource("1_8v0qi")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ktgk"]
+atlas = ExtResource("1_8v0qi")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o5du4"]
+atlas = ExtResource("1_8v0qi")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5kww7"]
+atlas = ExtResource("1_8v0qi")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_63hqc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fxqx4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bgcjn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lpomb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_chlbk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ktgk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o5du4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5kww7")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Bateria" type="Area2D"]
+script = ExtResource("1_iukva")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -1)
+shape = SubResource("RectangleShape2D_iukva")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(12, 7)
+sprite_frames = SubResource("SpriteFrames_63hqc")
+animation = &"idle"
+frame_progress = 0.32477
